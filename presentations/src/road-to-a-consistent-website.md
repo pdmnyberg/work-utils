@@ -41,14 +41,14 @@ title: Vägen till en konsekvent hemsida
 - Hur förstärker vi innehållsansvarig på bästa sätt?
 
 # Hur hittar man i kodbasen?
-- Enligt standard för Next -> hierarkin styr url
+- Enligt standard för Next $\rightarrow$ hierarkin styr url
 - Utifrån vad jag sett leder det lätt till att man sprider ut koncept och koddelning blir i viss mån lidande
 - Är det ett riktigt behov att ha så många unika sidtyper?
 
 # Hur minskar vi behovet av underhåll?
-- Mindre kod -> mindre underhåll
-- Ökad mängd datadrivet innehåll -> mindre underhåll
-- Pragmatiska designbeslut -> mindre underhåll
+- Mindre kod $\rightarrow$ mindre underhåll
+- Ökad mängd datadrivet innehåll $\rightarrow$ mindre underhåll
+- Pragmatiska designbeslut $\rightarrow$ mindre underhåll
 
 # Hur minskar vi kodduplicering?
 - Ökat användande av existerande komponenter
