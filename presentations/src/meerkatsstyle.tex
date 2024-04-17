@@ -31,6 +31,17 @@
   \end{beamercolorbox}%
 }
 
+\setbeamertemplate{title page}{
+  \inserttitlegraphic
+  \begin{tikzpicture}[overlay,remember picture, node distance=0.5cm]
+    \node[below=3.4cm,text width=7cm, align=center](SUBTITLE) at (current page.90){
+      \usebeamercolor[fg]{subtitle}\usebeamerfont{subtitle}\insertsubtitle
+    };
+    \node[above of=SUBTITLE, anchor=south, text width=7cm, align=center](TITLE){
+      \usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle
+    };
+  \end{tikzpicture}
+}
 \setbeamersize{sidebar width right=2.4cm} 
 \setbeamertemplate{footline}[progress bar]
 \setbeamercolor{progress bar}{fg=capri,bg=white!50!black}
