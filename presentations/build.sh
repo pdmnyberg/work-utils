@@ -8,8 +8,11 @@ pushd "$CURDIR"  # Entering presentations working directory
 mkdir -p "$OUTDIR"
 
 curl \
-    https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1024px-Git-logo.svg.png \
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1024px-Git-logo.svg.png" \
     -o "resources/git-logo.png"
+curl \
+    "https://images.unsplash.com/photo-1583778957124-763fd4826122?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
+    -o "resources/long-road.jpg"
 
 for filepath in $SRCDIR/*.md; do
     FILENAME=$(basename "$filepath") &&
