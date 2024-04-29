@@ -19,7 +19,7 @@ for filepath in $SRCDIR/*.md; do
     OUTFILE="$OUTDIR/$FILENAME.pdf" &&
     HEADEREXT="$SRCDIR/overrides/$FILENAME.tex" &&
     echo "Building: $OUTFILE" &&
-    pandoc \
+    pandoc --pdf-engine=xelatex \
         -t beamer \
         --include-in-header="$SRCDIR/meerkatsstyle.tex" \
         `[[ -f "$HEADEREXT" ]] && echo "--include-in-header=$HEADEREXT"` \
