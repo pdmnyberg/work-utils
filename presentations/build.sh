@@ -14,6 +14,10 @@ curl \
     "https://images.unsplash.com/photo-1583778957124-763fd4826122?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
     -o "resources/long-road.jpg"
 
+curl \
+    "https://images.unsplash.com/photo-1530518618982-f7f23af0e533?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
+    -o "resources/road-sign.jpg"
+
 for filepath in $SRCDIR/*.md; do
     FILENAME=$(basename "$filepath") &&
     OUTFILE="$OUTDIR/$FILENAME.pdf" &&
