@@ -13,10 +13,10 @@ This state evaluation makes the following assumtions:
 # The way forward: Code and design
 The same ideas can be used to reduce both code and the number of design concepts so I think they can be addressed together.
 
-- Improve usage of components
-- Establish conventions for how to use components
-- Establish conventions for when to create a new component
-  - What requires a new component?
+- Look at how the general structure of a website looks
+- Look at general content classes
+- Look at examples of current code
+- Discuss what we can do moving forward improving component usage and the development process
 
 # The general case for website content
 This is not necessarily how the current NBIS.se works but the over simplified optimal case.
