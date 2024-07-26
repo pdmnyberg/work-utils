@@ -1,0 +1,7 @@
+services:
+  node:
+    image: node:22
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./:/opt/output
+    working_dir: /opt/output
