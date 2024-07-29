@@ -3,3 +3,5 @@ venv
 node_modules
 presentations/resources/git-logo.png
 __pycache__
+wip
+.go-cache

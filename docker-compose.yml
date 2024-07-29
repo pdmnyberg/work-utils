@@ -1,7 +1,17 @@
 services:
-  node:
-    image: node:22
+  base:
+    image: example
     user: "${UID:-1000}:${GID:-1000}"
     volumes:
       - ./:/opt/output
     working_dir: /opt/output
+
+  node:
+    image: node:22
+    extends: base
+
+  go:
+    image: golang:1.22
+    extends: base
+    environment:
+      GOCACHE: /opt/output/.go-cache
