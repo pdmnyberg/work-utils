@@ -72,12 +72,9 @@ _setup_vm_actions() {
     setup() {
         mkdir -p "$ISOS"
         mkdir -p "$DISKS"
-        local DISTRONAME=`cat /etc/*-release | grep -e "^NAME="`
-        if [ "$DISTRONAME" = 'NAME="Debian GNU/Linux"' ]; then
-            sudo apt install qemu-system
-        else
-            echo "Warning: The setup script only supports Debian"
-        fi
+
+        _require_distro "Debian GNU/Linux"
+        sudo apt install qemu-system
     }
 
     _add_action "run" "Runs a named VM using qemu"

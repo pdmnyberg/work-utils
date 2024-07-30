@@ -43,12 +43,18 @@ _setup_manage() {
 		vms "$@"
 	}
 
+	presentations() {
+		source "$SCRIPTS/presentations.sh"
+		presentations_cmd "$@"
+	}
+
 	_add_action "help" "Display help message and a list of available commands"
 	_add_action "node" "Runs command using node"
 	_add_action "npm" "Runs command using npm"
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"
-	_add_action "vm" "Runs a VM untility command"
+	_add_action "vm" "Runs a VM utility command"
+	_add_action "presentations" "Run presentations utility command"
 }
 
 manage() {

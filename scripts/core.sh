@@ -35,6 +35,14 @@ _setup_actions() {
         fi
     }
 
+    _require_distro() {
+        local DISTRONAME=`cat /etc/*-release | grep -Po '^NAME="\K[^"]*'`
+        if [ ! "$DISTRONAME" = "$1" ]; then
+            echo "Warning: Incorrect distro name \"$DISTRONAME\". Expected \"$1\"";
+            exit 1;
+        fi
+    }
+
     _add_action "help" "Display help message and a list of available commands"
 }
 
