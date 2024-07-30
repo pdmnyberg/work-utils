@@ -12,6 +12,5 @@ ${SC}'source ${MANAGE_SCRIPT}'${NC} in order to get a real 'manage' command \
 with auto completions.
 "
 
-MANAGE_ENABLE_AUTO_COMPLETE="no"
 source "${MANAGE_SCRIPT}"
 manage "$@"
