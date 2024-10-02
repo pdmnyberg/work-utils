@@ -20,22 +20,22 @@ _setup_manage() {
 
 	node() {
 		_require_workdir
-		${COMPOSE} run --workdir "/opt/output/${USE_WORKDIR}" node node "$@"
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node node "$@"
 	}
 
 	npm() {
 		_require_workdir
-		${COMPOSE} run --workdir "/opt/output/${USE_WORKDIR}" node npm "$@"
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node npm "$@"
 	}
 
 	npx() {
 		_require_workdir
-		${COMPOSE} run --workdir "/opt/output/${USE_WORKDIR}" node npx "$@"
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node npx "$@"
 	}
 
 	go() {
 		_require_workdir
-		${COMPOSE} run --workdir "/opt/output/${USE_WORKDIR}" go go "$@"
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" go go "$@"
 	}
 
 	vm() {
