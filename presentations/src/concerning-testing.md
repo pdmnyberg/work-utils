@@ -18,6 +18,12 @@ title: Concerning testing
 - Integration testing
 - Regression testing
 
+`TODO: Add image of software testing pyramid`
+
+# Levels of a software system
+
+`TODO: Add image describing different levels of a software system`
+
 # Unit testing
 > Unit is defined as a single behaviour exhibited by the system under test (SUT), usually corresponding to a requirement.
 > From the system-requirements perspective only the perimeter of the system is relevant, thus only entry points to externally-visible system behaviours define units.
