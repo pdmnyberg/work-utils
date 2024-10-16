@@ -48,7 +48,6 @@ _setup_manage() {
 		presentations_cmd "$@"
 	}
 
-	_add_action "help" "Display help message and a list of available commands"
 	_add_action "node" "Runs command using node"
 	_add_action "npm" "Runs command using npm"
 	_add_action "npx" "Runs command using npx"
