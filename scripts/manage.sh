@@ -43,6 +43,11 @@ _setup_manage() {
 		vms "$@"
 	}
 
+	wip() {
+		mkdir -p "wip/$1"
+		WORKDIR="wip/$1" ./manage "${@:2:99}"
+	}
+
 	presentations() {
 		source "$SCRIPTS/presentations.sh"
 		presentations_cmd "$@"
@@ -53,6 +58,7 @@ _setup_manage() {
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"
 	_add_action "vm" "Runs a VM utility command"
+	_add_action "wip" "Run any action in WIP workdir. Ex. wip <subdir> <cmd> [...args]"
 	_add_action "presentations" "Run presentations utility command"
 }
 
