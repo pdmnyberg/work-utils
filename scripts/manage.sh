@@ -23,6 +23,11 @@ _setup_manage() {
 		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node node "$@"
 	}
 
+	node_shell() {
+		_require_workdir
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" --entrypoint bash node
+	}
+
 	npm() {
 		_require_workdir
 		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node npm "$@"
@@ -36,6 +41,11 @@ _setup_manage() {
 	go() {
 		_require_workdir
 		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" go go "$@"
+	}
+
+	atlas() {
+		_require_workdir
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" atlas "$@"
 	}
 
 	vm() {
@@ -54,6 +64,8 @@ _setup_manage() {
 	}
 
 	_add_action "node" "Runs command using node"
+	_add_action "node_shell" "Starts a node shell"
+	_add_action "atlas" "Runs atlas database migrationt tool"
 	_add_action "npm" "Runs command using npm"
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"

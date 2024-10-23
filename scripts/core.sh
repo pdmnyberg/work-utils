@@ -27,7 +27,7 @@ _setup_actions() {
         local NC='\e[0m'
         if [ -n "$action" ] && grep -qF -w -e "$action" <<<"${ACTIONS[*]}"
         then
-            echo -e "${TC}# Running: $action${NC}"
+            _info "${TC}# Running: $action${NC}"
             "$action" "${@:2:99}"
         else
             echo -e "${TC}# Manage script${NC}"
@@ -41,6 +41,31 @@ _setup_actions() {
             echo "Warning: Incorrect distro name \"$DISTRONAME\". Expected \"$1\"";
             exit 1;
         fi
+    }
+
+    _assert_equal() {
+        VAL_A=$1
+        VAL_B=$2
+        MESSAGE=$3
+        if [[ "$VAL_A" != "$VAL_B" ]]; then
+            echo "${MESSAGE}";
+            exit 1;
+        fi
+    }
+
+    _assert_gt() {
+        VAL_A=$1
+        VAL_B=$2
+        MESSAGE=$3
+        if [[ "$VAL_A" -gt "$VAL_B" ]]; then
+            echo "${MESSAGE}";
+            exit 1;
+        fi
+    }
+
+    _info() {
+        USE_VERBOSE="${VERBOSE:-0}"
+        if [ "$USE_VERBOSE" = "1" ]; then echo -e "$1"; fi
     }
 
     _add_action "help" "Display help message and a list of available commands"

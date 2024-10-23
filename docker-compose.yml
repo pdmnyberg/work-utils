@@ -9,6 +9,10 @@ services:
   node:
     image: node:22
     extends: base
+  
+  atlas:
+    image: arigaio/atlas
+    extends: base
 
   go:
     image: golang:1.22
