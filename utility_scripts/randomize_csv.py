@@ -21,6 +21,14 @@ def static_selector(value):
     return _static_selector
 
 
+def random_combinatior_selector(items, joiner=", ", max_items=4):
+    selector = multi_selector(joiner, max_items)
+    def _selector(_value_set):
+        return selector(items)
+
+    return _selector
+
+
 def split_itemizer(key=","):
     def _split_itemizer(value):
         return (
@@ -34,7 +42,7 @@ def split_itemizer(key=","):
 def multi_selector(joiner=", ", max_items=3):
     def _multi_selector(value_set):
         count = min(
-            random.randrange(max_items),
+            random.randrange(1, max_items),
             len(value_set)
         )
         return joiner.join(
@@ -45,8 +53,12 @@ def multi_selector(joiner=", ", max_items=3):
 
 def id_selector_generator():
     id_set = set()
+    id_ticker = 0
     def _id_creator_selector(value_set):
-        used_id = default_selector(value_set)
+        nonlocal id_ticker
+        id_list = list(value_set)
+        used_id = id_list[id_ticker]
+        id_ticker = id_ticker + 1
         id_set.add(used_id)
         return used_id
     
@@ -110,6 +122,31 @@ def tango_data(root=".", out="../example-data"):
             },
             {
                 "code": id_creator_selector,
+                "title": random_combinatior_selector(
+                    [
+                        "Machine Learning",
+                        "Deep Learning",
+                        "Neural Networks",
+                        "Genomics",
+                        "Proteomics",
+                        "Sequence Alignment",
+                        "Gene Expression",
+                        "Protein Structure Prediction",
+                        "Bioinformatics Pipelines",
+                        "Natural Language Processing",
+                        "Drug Discovery",
+                        "CRISPR",
+                        "Systems Biology",
+                        "Personalized Medicine",
+                        "Clustering Algorithms",
+                        "Evolutionary Algorithms",
+                        "Data Mining",
+                        "Omics Data Integration",
+                        "Artificial Intelligence",
+                        "Biomarker Discovery"
+                    ],
+                    " and "
+                ),
                 "date_start": static_selector("2023-01-01"),
                 "date_end": static_selector("2023-01-10"),
                 "funding": multi_selector(),
