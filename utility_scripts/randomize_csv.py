@@ -14,6 +14,13 @@ def default_selector(value_set):
     )
 
 
+def static_selector(value):
+    def _static_selector(_value_set):
+        return value
+    
+    return _static_selector
+
+
 def split_itemizer(key=","):
     def _split_itemizer(value):
         return (
@@ -38,12 +45,10 @@ def multi_selector(joiner=", ", max_items=3):
 
 def id_selector_generator():
     id_set = set()
-    id_ticker = 0
-    def _id_creator_selector(_value):
-        nonlocal id_ticker
-        id_ticker = id_ticker + 1
-        id_set.add(id_ticker)
-        return id_ticker
+    def _id_creator_selector(value_set):
+        used_id = default_selector(value_set)
+        id_set.add(used_id)
+        return used_id
     
     def _id_selector(_value_set):
         return default_selector(id_set)
@@ -91,7 +96,7 @@ def write_data(path: str, data: list):
             writer.writerow(entry)
 
 
-def tango_data(root=".", out="gen"):
+def tango_data(root=".", out="../example-data"):
     (id_creator_selector, id_selector) = id_selector_generator()
     generators = (
         (
@@ -105,6 +110,8 @@ def tango_data(root=".", out="gen"):
             },
             {
                 "code": id_creator_selector,
+                "date_start": static_selector("2023-01-01"),
+                "date_end": static_selector("2023-01-10"),
                 "funding": multi_selector(),
                 "target_audience": multi_selector(),
                 "additional_platforms": multi_selector(),
