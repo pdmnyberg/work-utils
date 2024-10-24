@@ -45,5 +45,10 @@ apply_migrations() {
         --dir "file://${MIGRATIONS}"
 }
 
+rehash() {
+    manage atlas migrate hash \
+        --dir "file://${MIGRATIONS}"
+}
+
 _assert_gt 1 $# "<command-id> [...command arguments]"
 "$1" "${@:2:99}"
