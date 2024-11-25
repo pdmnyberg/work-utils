@@ -9,9 +9,13 @@ services:
   node:
     image: node:22
     extends: base
-  
+
   atlas:
     image: arigaio/atlas
+    extends: base
+
+  python:
+    image: python:3.13-slim
     extends: base
 
   go:

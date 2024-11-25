@@ -43,6 +43,11 @@ _setup_manage() {
 		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" go go "$@"
 	}
 
+	python() {
+		_require_workdir
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" python python "$@"
+	}
+
 	atlas() {
 		_require_workdir
 		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" atlas "$@"
@@ -69,6 +74,7 @@ _setup_manage() {
 	_add_action "npm" "Runs command using npm"
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"
+	_add_action "python" "Runs command using python"
 	_add_action "vm" "Runs a VM utility command"
 	_add_action "wip" "Run any action in WIP workdir. Ex. wip <subdir> <cmd> [...args]"
 	_add_action "presentations" "Run presentations utility command"
