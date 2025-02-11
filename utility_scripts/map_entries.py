@@ -20,7 +20,8 @@ def map_entries(
     source_value: str,
     target_value: str,
     transform: Callable[[str], str],
-    cutoff: float = 0.6
+    cutoff: float = 0.6,
+    default_value: str = None,
 ):
     mapped_targets = {
         transform(target[target_value]): target
@@ -43,7 +44,10 @@ def map_entries(
                     )[0]
                     output_map[value] = mapped_targets[closest_match]
                 except IndexError:
-                    raise ValueError(f"No match for '{value}'")
+                    if default_value:
+                        output_map[value] = mapped_targets[default_value]
+                    else:
+                        raise ValueError(f"No match for '{value}'")
     return json.dumps(output_map)
 
 
@@ -73,6 +77,7 @@ def main(argv: list[str]):
         target_value = argv[3]
         transform = parse_transform(argv[4])
         cutoff = float(argv[5]) if len(argv) > 5 else 0.6
+        default_value = argv[6] if len(argv) > 6 else None
 
         entries = load_entries(source)
         targets = load_entries(target)
@@ -83,7 +88,8 @@ def main(argv: list[str]):
                 source_value,
                 target_value,
                 transform,
-                cutoff
+                cutoff,
+                default_value
             )
         )
     except (IndexError, ValueError) as e:
@@ -92,7 +98,7 @@ def main(argv: list[str]):
             "the target json list: \n"
             "Usage: python map_entries.py <source-path.json> "
             "<target-path.json> <source_value> <target_value> "
-            "<transform> [cutoff|0.6]\n"
+            "<transform> [cutoff|0.6] [default_value|None]\n"
             "  - source-path: If file-path equals '-' the script reads "
             "from stdin otherwise it is used as a file path\n"
             "  - target-path: If file-path equals '-' the script reads "
@@ -101,6 +107,8 @@ def main(argv: list[str]):
             "  - target_value: The property to be mapped from target data \n"
             "  - transform: Tranform applied to source and target data \n"
             "  - cutoff(optional): Cut-off [0, 1] value for closes match \n"
+            "  - default_value(optional): The default value to map to when no "
+            "match is found.\n"
             "\n"
             f"Error: {e}"
         )
