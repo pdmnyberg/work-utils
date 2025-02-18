@@ -24,6 +24,11 @@ $(RSCDIR)/crisp.jpg:
 		"https://images.unsplash.com/photo-1604565011092-c0fa4416f80f?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
 		-o "$@"
 
+$(RSCDIR)/rubberduck.jpg:
+	curl \
+		"https://images.unsplash.com/photo-1603736087997-5daec6092347?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
+		-o "$@"
+
 $(OUTDIR)/%.pdf: \
 	$(SRCDIR)/%.md \
 	$(SRCDIR)/meerkatsstyle.tex \
@@ -42,7 +47,8 @@ $(RSCDIR)/all-images: \
 	$(RSCDIR)/git-log.png \
 	$(RSCDIR)/long-road.jpg \
 	$(RSCDIR)/road-sign.jpg \
-	$(RSCDIR)/crisp.jpg
+	$(RSCDIR)/crisp.jpg \
+	$(RSCDIR)/rubberduck.jpg
 	touch $@
 
 all: \
