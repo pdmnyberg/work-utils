@@ -6,7 +6,7 @@ DOC_OUTDIR?=output/documents
 DOC_SRCDIR=src/documents
 DOC_SOURCES=$(wildcard $(DOC_SRCDIR)/*.md)
 
-RSCDIR=resources
+RSCDIR=resources/external
 COMMON_STYLE=$(SRCDIR)/meerkatsstyle.tex
 
 
@@ -15,7 +15,7 @@ all: \
 	$(SOURCES:$(SRCDIR)/%.md=$(OUTDIR)/%.pdf) \
 	$(DOC_SOURCES:$(DOC_SRCDIR)/%.md=$(DOC_OUTDIR)/%.pdf)
 
-$(RSCDIR)/git-log.png:
+$(RSCDIR)/git-logo.png:
 	curl \
 		"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Git-logo.svg/1024px-Git-logo.svg.png" \
 		-o "$@"
@@ -52,6 +52,7 @@ $(DOC_OUTDIR)/%.pdf: \
 $(OUTDIR)/%.pdf: \
 	$(SRCDIR)/%.md \
 	$(SRCDIR)/meerkatsstyle.tex \
+	$(SRCDIR)/overrides/%.md.tex
 
 	mkdir -p $(OUTDIR) && \
 	HEADEREXT="$(SRCDIR)/overrides/$*.md.tex" && \
@@ -64,7 +65,7 @@ $(OUTDIR)/%.pdf: \
 		$<
 
 $(RSCDIR)/all-images: \
-	$(RSCDIR)/git-log.png \
+	$(RSCDIR)/git-logo.png \
 	$(RSCDIR)/long-road.jpg \
 	$(RSCDIR)/road-sign.jpg \
 	$(RSCDIR)/crisp.jpg \
