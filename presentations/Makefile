@@ -1,8 +1,19 @@
 SRCDIR=src
 OUTDIR?=output
+SOURCES=$(wildcard $(SRCDIR)/*.md)
+
+DOC_OUTDIR?=output/documents
+DOC_SRCDIR=src/documents
+DOC_SOURCES=$(wildcard $(DOC_SRCDIR)/*.md)
+
 RSCDIR=resources
 COMMON_STYLE=$(SRCDIR)/meerkatsstyle.tex
-SOURCES=$(wildcard $(SRCDIR)/*.md)
+
+
+all: \
+	$(RSCDIR)/all-images \
+	$(SOURCES:$(SRCDIR)/%.md=$(OUTDIR)/%.pdf) \
+	$(DOC_SOURCES:$(DOC_SRCDIR)/%.md=$(DOC_OUTDIR)/%.pdf)
 
 $(RSCDIR)/git-log.png:
 	curl \
@@ -29,6 +40,15 @@ $(RSCDIR)/rubberduck.jpg:
 		"https://images.unsplash.com/photo-1603736087997-5daec6092347?q=80&w=500&h=2000&fmt=jpeg&fit=crop" \
 		-o "$@"
 
+$(DOC_OUTDIR)/%.pdf: \
+	$(DOC_SRCDIR)/%.md
+
+	mkdir -p $(DOC_OUTDIR) && \
+	echo "Building: $@: $^" && \
+	pandoc --pdf-engine=xelatex \
+		-o $@ \
+		$<
+
 $(OUTDIR)/%.pdf: \
 	$(SRCDIR)/%.md \
 	$(SRCDIR)/meerkatsstyle.tex \
@@ -50,7 +70,3 @@ $(RSCDIR)/all-images: \
 	$(RSCDIR)/crisp.jpg \
 	$(RSCDIR)/rubberduck.jpg
 	touch $@
-
-all: \
-	$(RSCDIR)/all-images \
-	$(SOURCES:$(SRCDIR)/%.md=$(OUTDIR)/%.pdf)
