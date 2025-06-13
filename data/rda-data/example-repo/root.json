@@ -1,0 +1,42 @@
+{
+    "id": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo",
+    "name": "Example Repo",
+    "description": "This is an example repo",
+    "url": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/root.json",
+    "baseModels": [
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/models/gorc-im-base.json"
+        },
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/models/oss-base.json"
+        }
+    ],
+    "profiles": [
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/profiles/gorc-im-only-gol.json",
+            "modelId": "gorc-im-base"
+        },
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/profiles/gorc-im-only-sustainability.json",
+            "modelId": "gorc-im-base"
+        },
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/profiles/gorc-im-only-ropaa.json",
+            "modelId": "gorc-im-base"
+        }
+    ],
+    "thematicSlices": [
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/slices/gorc-im-gol-slice.json",
+            "modelId": "gorc-im-base"
+        },
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/slices/gorc-im-sustainability-slice.json",
+            "modelId": "gorc-im-base"
+        },
+        {
+            "ref": "https://raw.githubusercontent.com/pdmnyberg/work-utils/refs/heads/main/data/rda-data/example-repo/slices/gorc-im-ropaa-slice.json",
+            "modelId": "gorc-im-base"
+        }
+    ]
+}
