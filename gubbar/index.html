@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+}
+@keyframes headbob {
+  0% {
+    transform: translateY(-2.5%) rotate(5deg);
+  }
+  50% {
+    transform: translateY(2.5%) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(-2.5%) rotate(5deg);
+  }
+}
+.gubbar {
+    position: relative;
+    width: 100%;
+    background: url('gubbar-bg.png') no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 566/800;
+}
+
+.lars {
+    position: absolute;
+    top: 27%;
+    left: 20%;
+    width: 20%;
+    background: url('lars.png') no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 333/448;
+    animation-name: headbob;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.barbro {
+    position: absolute;
+    top: 25.5%;
+    left: 37.5%;
+    width: 20%;
+    background: url('barbro.png') no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 358/417;
+    animation-name: headbob;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+}
+
+.gunnar {
+    position: absolute;
+    top: 29%;
+    left: 57%;
+    width: 18%;
+    background: url('gunnar.png') no-repeat;
+    background-size: 100% 100%;
+    aspect-ratio: 303/463;
+    animation-name: headbob;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+}
+
+    </style>
+</head>
+<body>
+    <div class="gubbar">
+        <div class="lars"></div>
+        <div class="barbro"></div>
+        <div class="gunnar"></div>
+    </div>
+</body>
+</html>
