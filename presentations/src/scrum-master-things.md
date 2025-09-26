@@ -16,7 +16,7 @@
 
 # Sprintly things
 - Sprint Retro
-    - Create a new board
+    - Create a new board: https://retrotool.io
     - Start the meeting
     - Save the result from the board
 
