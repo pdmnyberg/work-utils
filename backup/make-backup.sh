@@ -1,11 +1,10 @@
-if [ "$#" -ne 1 ]; then
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
     echo "Wrong number of parameters"
     exit 1
 fi
 
-
 DATE=$(date '+%Y-%m-%d')
-BACKUP_DIR="$1/home-${DATE}"
+BACKUP_DIR="$1/home-${2:-$DATE}"
 echo "Backing up Home to: $BACKUP_DIR"
 rsync -a --delete --quiet --exclude-from rsync-homedir-excludes.txt ~/ "$BACKUP_DIR"
 echo "Done"
