@@ -1,0 +1,6 @@
+digraph regexp { 
+ fontname="Helvetica,Arial,sans-serif"
+ node [fontname="Helvetica,Arial,sans-serif"]
+ edge [fontname="Helvetica,Arial,sans-serif"]
+ {A, B, C} -> {D, E, F}
+}

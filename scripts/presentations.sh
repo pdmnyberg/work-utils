@@ -20,8 +20,13 @@ _setup_presentation_actions() {
         sudo apt install pandoc texlive-xetex make
     }
 
+    build-diagrams() {
+        docker compose run --rm --workdir=/opt/build/diagrams document-builder make
+    }
+
     _add_action "build" "Build all presentations"
     _add_action "setup" "Setup environment for presentations"
+    _add_action "build-diagrams" "Build diagrams using graphviz"
 }
 
 presentations_cmd() {

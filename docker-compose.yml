@@ -23,3 +23,11 @@ services:
     extends: base
     environment:
       GOCACHE: /opt/output/.go-cache
+
+  document-builder:
+    build:
+      dockerfile: ./containers/document-builder.Dockerfile
+    working_dir: /opt/build
+    volumes:
+      - ./presentations:/opt/build/presentations
+      - ./diagrams:/opt/build/diagrams
