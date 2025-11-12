@@ -1,0 +1,243 @@
+digraph Bird_Ringing_UML {
+    rankdir=LR;
+	graph [
+		label="Bird Ringing UML"
+		labelloc="t"
+		fontname="Helvetica,Arial,sans-serif"
+	]
+	node [
+		fontname="Helvetica,Arial,sans-serif"
+		shape=record
+		style=filled
+		fillcolor=gray95
+	]
+	edge [fontname="Helvetica,Arial,sans-serif"]
+	edge [arrowhead=vee style=dashed]
+
+    // ========================
+    // ENUM DEFINITIONS
+    // ========================
+
+    ActorTypeChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="1"><b>ActorTypeChoices</b></td></tr>
+        <tr><td align="left">PERSON</td></tr>
+        <tr><td align="left">STATION</td></tr>
+        </table>
+    >];
+
+    SexChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>SexChoices</b></td></tr>
+        <tr><td align="left">MALE</td></tr>
+        <tr><td align="left">FEMALE</td></tr>
+        <tr><td align="left">UNDISCLOSED</td></tr>
+        <tr><td align="left">NOT_APPLICABLE</td></tr>
+        </table>
+    >];
+
+    LanguageChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>LanguageChoices</b></td></tr>
+        <tr><td align="left">SV</td></tr>
+        </table>
+    >];
+
+    ReportStatusChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>ReportStatusChoices</b></td></tr>
+        <tr><td align="left">YES</td></tr>
+        <tr><td align="left">NO</td></tr>
+        <tr><td align="left">INCOMPLETE</td></tr>
+        </table>
+    >];
+
+    LicenseRoleChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>LicenseRoleChoices</b></td></tr>
+        <tr><td align="left">RINGER</td></tr>
+        <tr><td align="left">HELPER</td></tr>
+        <tr><td align="left">ASSOCIATE</td></tr>
+        </table>
+    >];
+
+    RelationStatusChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>RelationStatusChoices</b></td></tr>
+        <tr><td align="left">ACTIVE</td></tr>
+        <tr><td align="left">INACTIVE</td></tr>
+        <tr><td align="left">TERMINATED</td></tr>
+        </table>
+    >];
+
+    DocumentTypeChoices [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>DocumentTypeChoices</b></td></tr>
+        <tr><td align="left">DOCUMENT</td></tr>
+        <tr><td align="left">LICENSE</td></tr>
+        </table>
+    >];
+
+    CommunicationType [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>CommunicationType</b></td></tr>
+        <tr><td align="left">LICENSE_DELIVERY</td></tr>
+        <tr><td align="left">LICENSE_UPDATE</td></tr>
+        </table>
+    >];
+
+    CommunicationStatus [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightgray" colspan="2"><b>CommunicationStatus</b></td></tr>
+        <tr><td align="left">SENT</td></tr>
+        <tr><td align="left">RECEIVED</td></tr>
+        <tr><td align="left">BOUNCED</td></tr>
+        </table>
+    >];
+
+    // ========================
+    // TABLE DEFINITIONS
+    // ========================
+
+    Actor [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>Actor</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">full_name</td><td align="left">varchar(2048)</td></tr>
+        <tr><td align="left">given_name</td><td align="left">varchar(128)</td></tr>
+        <tr><td align="left">type</td><td align="left">ActorTypeChoices</td></tr>
+        <tr><td align="left">sex</td><td align="left">SexChoices</td></tr>
+        <tr><td align="left">birth_date</td><td align="left">date</td></tr>
+        <tr><td align="left">language</td><td align="left">LanguageChoices</td></tr>
+        <tr><td align="left">phone_number1</td><td align="left">varchar(128)</td></tr>
+        <tr><td align="left">phone_number2</td><td align="left">varchar(128)</td></tr>
+        <tr><td align="left">email</td><td align="left">varchar(2048)</td></tr>
+        <tr><td align="left">alternative_email</td><td align="left">varchar(2048)</td></tr>
+        <tr><td align="left">address</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">co_address</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">postal_code</td><td align="left">varchar(64)</td></tr>
+        <tr><td align="left">city</td><td align="left">varchar(256)</td></tr>
+        <tr><td align="left">country</td><td align="left">varchar(256)</td></tr>
+        </table>
+    >];
+
+    License [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>License</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">mnr</td><td align="left">varchar(4)</td></tr>
+        <tr><td align="left">location</td><td align="left">text</td></tr>
+        <tr><td align="left">description</td><td align="left">text</td></tr>
+        <tr><td align="left">reportStatus</td><td align="left">ReportStatusChoices</td></tr>
+        <tr><td align="left">starts_at</td><td align="left">date</td></tr>
+        <tr><td align="left">ends_at</td><td align="left">date</td></tr>
+        </table>
+    >];
+
+    Species [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>Species</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">name</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">scientificName</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">scientificCode</td><td align="left">varchar(128)</td></tr>
+        </table>
+    >];
+
+    LicenseRelation [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicenseRelation</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">actor_id</td><td align="left">int (FK → Actor)</td></tr>
+        <tr><td align="left">license_id</td><td align="left">int (FK → License)</td></tr>
+        <tr><td align="left">mednr</td><td align="left">varchar(4)</td></tr>
+        <tr><td align="left">role</td><td align="left">LicenseRoleChoices</td></tr>
+        <tr><td align="left">status</td><td align="left">RelationStatusChoices</td></tr>
+        </table>
+    >];
+
+    LicenseCommunication [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicenseCommunication</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">actor_id</td><td align="left">int (FK → Actor)</td></tr>
+        <tr><td align="left">license_id</td><td align="left">int (FK → License)</td></tr>
+        <tr><td align="left">type</td><td align="left">CommunicationType</td></tr>
+        <tr><td align="left">status</td><td align="left">CommunicationStatus</td></tr>
+        <tr><td align="left">note</td><td align="left">varchar(512)</td></tr>
+        </table>
+    >];
+
+    LicenseDocument [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicenseDocument</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">actor_id</td><td align="left">int (FK → Actor, nullable)</td></tr>
+        <tr><td align="left">license_id</td><td align="left">int (FK → License)</td></tr>
+        <tr><td align="left">type</td><td align="left">DocumentTypeChoices</td></tr>
+        <tr><td align="left">data</td><td align="left">binary</td></tr>
+        <tr><td align="left">reference</td><td align="left">varchar(2048)</td></tr>
+        </table>
+    >];
+
+    LicensePermissionType [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicensePermissionType</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">name</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">description</td><td align="left">text</td></tr>
+        </table>
+    >];
+
+    LicensePermissionProperty [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicensePermissionProperty</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">related_type_id</td><td align="left">int (FK → LicensePermissionType)</td></tr>
+        <tr><td align="left">name</td><td align="left">varchar(512)</td></tr>
+        <tr><td align="left">description</td><td align="left">text</td></tr>
+        </table>
+    >];
+
+    LicensePermission [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>LicensePermission</b></td></tr>
+        <tr><td align="left">id</td><td align="left">int (PK)</td></tr>
+        <tr><td align="left">type_id</td><td align="left">int (FK → LicensePermissionType)</td></tr>
+        <tr><td align="left">license_id</td><td align="left">int (FK → License)</td></tr>
+        <tr><td align="left">location</td><td align="left">text</td></tr>
+        <tr><td align="left">description</td><td align="left">text</td></tr>
+        <tr><td align="left">starts_at</td><td align="left">date</td></tr>
+        <tr><td align="left">ends_at</td><td align="left">date</td></tr>
+        </table>
+    >];
+
+    RingColor [label=<
+        <table border="0" cellborder="0" cellspacing="0">
+        <tr><td bgcolor="lightblue" colspan="2"><b>RingColor</b></td></tr>
+        <tr><td align="left">permission_id</td><td align="left">int (FK → LicensePermission)</td></tr>
+        </table>
+    >];
+
+    // ========================
+    // RELATIONSHIPS
+    // ========================
+
+    Actor -> LicenseRelation [label="1..*"];
+    License -> LicenseRelation [label="1..*"];
+
+    Actor -> LicenseCommunication [label="1..*"];
+    License -> LicenseCommunication [label="1..*"];
+
+    Actor -> LicenseDocument [label="0..*"];
+    License -> LicenseDocument [label="1..*"];
+
+    LicensePermissionType -> LicensePermission [label="1..*"];
+    License -> LicensePermission [label="1..*"];
+
+    LicensePermissionType -> LicensePermissionProperty [label="1..*"];
+    LicensePermission -> RingColor [label="1..1"];
+
+    LicensePermission -> Species [label="M:N"];
+    LicensePermission -> LicensePermissionProperty [label="M:N"];
+}
