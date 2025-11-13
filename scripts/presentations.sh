@@ -6,18 +6,7 @@ source scripts/core.sh
 
 _setup_presentation_actions() {
     build() {
-        CURDIR="presentations"
-
-        pushd "$CURDIR"  # Entering presentations working directory
-
-        make all
-
-        popd  # Exiting presentations working directory
-    }
-
-    setup() {
-        _require_distro "Debian GNU/Linux"
-        sudo apt install pandoc texlive-xetex make
+        docker compose run --rm --workdir=/opt/build/presentations document-builder make "$@"
     }
 
     build-diagrams() {

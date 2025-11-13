@@ -64,6 +64,18 @@ $(OUTDIR)/%.pdf: \
 		-o $@ \
 		$<
 
+$(OUTDIR)/%.pdf: \
+	$(SRCDIR)/%.md \
+	$(SRCDIR)/meerkatsstyle.tex
+
+	mkdir -p $(OUTDIR) && \
+	echo "Building: $@: $^" && \
+	pandoc --pdf-engine=xelatex \
+		-t beamer \
+		--include-in-header="$(COMMON_STYLE)" \
+		-o $@ \
+		$<
+
 $(RSCDIR)/all-images: \
 	$(RSCDIR)/git-logo.png \
 	$(RSCDIR)/long-road.jpg \
