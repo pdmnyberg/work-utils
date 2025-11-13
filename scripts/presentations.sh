@@ -10,11 +10,10 @@ _setup_presentation_actions() {
     }
 
     build-diagrams() {
-        docker compose run --rm --workdir=/opt/build/diagrams document-builder make
+        docker compose run --rm --workdir=/opt/build/diagrams document-builder make "$@"
     }
 
     _add_action "build" "Build all presentations"
-    _add_action "setup" "Setup environment for presentations"
     _add_action "build-diagrams" "Build diagrams using graphviz"
 }
 
