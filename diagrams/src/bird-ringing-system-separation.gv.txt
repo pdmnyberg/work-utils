@@ -1,0 +1,63 @@
+
+digraph system_separation { 
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif", shape=box]
+  edge [fontname="Helvetica,Arial,sans-serif"]
+  
+  admin [label="Admin", shape=doublecircle];
+  intent [label="Intent", shape=diamond];
+
+  #admin_desc [label="Admin is the ringer license administrator working with managing licenses"];
+  #nrm_entrypoint_desc [label="The NRM Bird Ringing Entrypoint is the old system and allows all of the current operations"];
+  #nbis_data_desc [label="NBIS Database primarily focuses on holding the data pushed from the old system while allowing updates to generated documents and communication status"];
+  #nbis_entrypoint_desc [label="The NBIS Bird Ringing Entrypoint is the new system and focuses primarily on communcation around licenses and generation of license documents"];
+
+  subgraph cluster_nrm_system {
+    style=filled;
+		fillcolor=lightgrey;
+		node [style=filled,fillcolor=white];
+
+    nrm_entrypoint [label="Entrypoint", shape=component];
+    nrm_data [label="NRM Database", shape=cylinder];
+    label="NRM Bird Ringing (Legacy)";
+  }
+
+  subgraph cluster_nbis_system {
+    style=filled;
+		fillcolor=lightgrey;
+		node [style=filled,fillcolor=white];
+
+    nbis_entrypoint[label="Entrypoint", shape=component];
+    nbis_data [label="NBIS Database", shape=cylinder];
+    label="NBIS Bird Ringing (New system)";
+  }
+
+  one_way_push [label="One way push of data", shape=box3d];
+
+  #admin_desc -> admin [style=dotted];
+  #nbis_data_desc -> nbis_data [style=dotted];
+  #nbis_entrypoint_desc -> nbis_entrypoint [style=dotted];
+  #nrm_entrypoint_desc -> nrm_entrypoint [style=dotted];
+
+  admin -> intent;
+
+  intent -> nrm_entrypoint [label="Update licenses"];
+  intent -> nrm_entrypoint [label="Update actors"];
+  intent -> nrm_entrypoint [label="Update other content"];
+
+  nrm_entrypoint -> nrm_data [label="Perform change operations", style=dotted];
+  nrm_data -> nrm_entrypoint [label="Show results", style=dotted];
+
+
+  intent -> nbis_entrypoint [label="Communicate license information"];
+  intent -> nbis_entrypoint [label="Send reminders"];
+  intent -> nbis_entrypoint [label="Inspect licenses"];
+  intent -> nbis_entrypoint [label="Inspect actors"];
+
+  nbis_entrypoint -> nbis_data [label="Store generated license documents", style=dotted];
+  nbis_entrypoint -> nbis_data [label="Store license communcation", style=dotted];
+  nbis_data -> nbis_entrypoint [label="Show results", style=dotted];
+
+  nrm_data -> one_way_push [label="Data was updated or period of time passed", style=dotted];
+  one_way_push -> nbis_data [label="Data transformed to new data model", style=dotted];
+}
