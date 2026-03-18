@@ -21,7 +21,10 @@ def main(source: str, target_template: str):
 
 
 def headers_from_sheet(sheet):
-    return [h.value.strip() for h in next(sheet.iter_rows())]
+    return [
+        None if h.value is None else h.value.strip()
+        for h in next(sheet.iter_rows())
+    ]
 
 
 def sheet_to_dict(headers: list[str], sheet):
