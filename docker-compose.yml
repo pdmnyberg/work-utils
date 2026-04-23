@@ -31,3 +31,6 @@ services:
     volumes:
       - ./presentations:/opt/build/presentations
       - ./diagrams:/opt/build/diagrams
+    
+  swagger-cli:
+    image: swaggerapi/swagger-codegen-cli:v2.4.51
