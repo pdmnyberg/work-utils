@@ -12,6 +12,8 @@ This document tries to give a short introduction on how to add translations to a
 - [Preparing translations for runtime](#preparing-translations-for-runtime)
 - [Getting localized responses](#getting-localized-responses)
 
+At the end of the documents there are som additional [notes](#notes) related to how to use translations in pactice.
+
 ## Dependencies
 In order to work with translations in django it is necessary to have `GNU gettext` installed on your system.
 
@@ -142,3 +144,23 @@ The user language is determined using the following priority order:
 
 ### Extras
 Have a look at `i18n_patterns` if you want to be able to select language using the url rather than other variants.
+
+## Notes
+
+When using translations while providing a REST API it might be useful to keep `ENUM` like properties uniquely identifiabe yet human readable. This can be done providing a returned type that includes both an `id` and a `label`. Where both `id` and `label` are strings but `label` is translated to the identified langauge. If that makes the result structure to intricate I would recommend avoid translating the results from the REST API.
+
+When using translations for an `models.IntegerChoices` the above reasoning can be applied as follows. Note that this is only an example of how to transform the data and not how to implement an actual serializer. The point here is to use a stable human readable `id` which `models.IntegerChoices.name` provides while the `models.IntegerChoices.label` provides the translated label for the value.
+
+```python
+# ...
+
+class Choices(models.IntegerChoices):
+    A = (1, _("Value of A"))
+    B = (2, _("Value of B"))
+
+def enum_like_api_response_for_Choices(value):
+    return {
+        "id": str(Choices(value).name).lower(),
+        "label": Choices(value).label,
+    }
+```
