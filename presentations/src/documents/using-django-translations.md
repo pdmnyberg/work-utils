@@ -91,6 +91,8 @@ After successfully configuring `LOCALE_PATHS` and adding your first translatable
 ./manage.py makemessages -l sv
 ```
 
+> **_NOTE:_** When using makemessages again following the initial translation it can be a good idea to have an extra look at all messages that have comment `fuzzy` related to them. Theses may be correctly autotranslated but may also be mistakes made by the system.
+
 These commands will generate message files in your `LOCALE_PATHS` directory (`{LOCALE_PATHS}/{language_code}/LC_MESSAGES/django.po`) and the content will look something like this:
 
 ```po
