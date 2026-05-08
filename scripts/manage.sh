@@ -68,6 +68,11 @@ _setup_manage() {
 		vms "$@"
 	}
 
+	ollama() {
+		source "$SCRIPTS/ollama.sh"
+		ollama_cmd "$@"
+	}
+
 	wip() {
 		mkdir -p "wip/$1"
 		WORKDIR="wip/$1" ./manage "${@:2:99}"
@@ -85,6 +90,7 @@ _setup_manage() {
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"
 	_add_action "python" "Runs command using python"
+	_add_action "ollama" "Runs an ollama command"
 	_add_action "python-shell" "Run using shell in python container"
 	_add_action "swagger-cli" "Run using swagger cli container"
 	_add_action "vm" "Runs a VM utility command"
