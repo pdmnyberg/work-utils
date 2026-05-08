@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export HELP_TEXT="This is a management. It contains a number of \
+export HELP_TEXT="This script contains a number of \
 utility functions that aims to simplify the process of development. \
 The available actions are as follows:"
 source scripts/core.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export HELP_TEXT="This is a management. It contains a number of \
+export HELP_TEXT="This script contains a number of \
 utility functions that aims to simplify using vms on the command line:"
 source scripts/core.sh
 
