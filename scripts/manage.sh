@@ -18,49 +18,45 @@ _setup_manage() {
 		fi
 	}
 
-	node() {
+	_run_with_workdir() {
 		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node node "$@"
+		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" "$@"
 	}
 
-	node_shell() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" --entrypoint bash node
+	node() {
+		_run_with_workdir node node "$@"
+	}
+
+	node-shell() {
+		_run_with_workdir --entrypoint bash node
 	}
 
 	npm() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node npm "$@"
+		_run_with_workdir node npm "$@"
 	}
 
 	npx() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" node npx "$@"
+		_run_with_workdir node npx "$@"
 	}
 
 	go() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" go go "$@"
+		_run_with_workdir go go "$@"
 	}
 
 	python() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" python python "$@"
+		_run_with_workdir python python "$@"
 	}
 
 	python-shell() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" python bash "$@"
+		_run_with_workdir python bash "$@"
 	}
 
 	atlas() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" atlas "$@"
+		_run_with_workdir atlas "$@"
 	}
 
 	swagger-cli() {
-		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" swagger-cli "$@"
+		_run_with_workdir swagger-cli "$@"
 	}
 
 	vm() {
@@ -84,7 +80,7 @@ _setup_manage() {
 	}
 
 	_add_action "node" "Runs command using node"
-	_add_action "node_shell" "Starts a node shell"
+	_add_action "node-shell" "Starts a node shell"
 	_add_action "atlas" "Runs atlas database migrationt tool"
 	_add_action "npm" "Runs command using npm"
 	_add_action "npx" "Runs command using npx"
