@@ -5,20 +5,31 @@ HELP_TEXT=${HELP_TEXT:-"This is a management script."}
 _setup_actions() {
     ACTIONS=()
     HELP_SECTIONS=()
+    ADDITIONAL_HELP=()
 
     help() {
-        echo "$HELP_TEXT"
+        INDENT=$(printf '%*s' "$1")
+        if [[ -z $INDENT ]]
+        then
+            echo "$INDENT$HELP_TEXT"
+        fi
         local AC='\e[0;32m'
         local NC='\e[0m'
         for action_index in "${!ACTIONS[@]}"
         do
-            echo -e " - ${AC}${ACTIONS[$action_index]}${NC}: ${HELP_SECTIONS[$action_index]}"
+            echo -e "$INDENT - ${AC}${ACTIONS[$action_index]}${NC}: ${HELP_SECTIONS[$action_index]}"
+            ADDITIONAL_HELP_CMD="${ADDITIONAL_HELP[$action_index]}"
+            if [[ -n $ADDITIONAL_HELP_CMD ]]
+            then
+                $ADDITIONAL_HELP_CMD
+            fi
         done
     }
 
     _add_action() {
         ACTIONS+=("$1")
         HELP_SECTIONS+=("$2")
+        ADDITIONAL_HELP+=("$3")
     }
 
     _run() {

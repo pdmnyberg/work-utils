@@ -86,12 +86,12 @@ _setup_manage() {
 	_add_action "npx" "Runs command using npx"
 	_add_action "go" "Runs command using go"
 	_add_action "python" "Runs command using python"
-	_add_action "ollama" "Runs an ollama command"
+	_add_action "ollama" "Runs an ollama command" "./manage ollama help 2"
 	_add_action "python-shell" "Run using shell in python container"
 	_add_action "swagger-cli" "Run using swagger cli container"
-	_add_action "vm" "Runs a VM utility command"
+	_add_action "vm" "Runs a VM utility command" "./manage vm help 2"
 	_add_action "wip" "Run any action in WIP workdir. Ex. wip <subdir> <cmd> [...args]"
-	_add_action "presentations" "Run presentations utility command"
+	_add_action "presentations" "Run presentations utility command"  "./manage presentations help 2"
 }
 
 manage() {
