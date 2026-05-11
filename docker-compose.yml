@@ -7,7 +7,7 @@ services:
     working_dir: /opt/output
 
   node:
-    image: node:22
+    image: node:24
     extends: base
 
   atlas:
