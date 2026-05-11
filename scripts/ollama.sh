@@ -5,12 +5,13 @@ utility functions that start and manage ollama:"
 source scripts/core.sh
 
 _setup_ollama_actions() {
+    DOCKER="${DOCKER:-docker}"
     CONTAINER_NAME="ollama"
     CONTAINER_VOLUME="ollama"
-    USE_AMD="${USE_AMD:-0}"
+    USE_GPU="${USE_GPU:-NO}"
 
     start() {
-        if [ "$USE_AMD" -eq "1" ]; then
+        if [ "$USE_GPU" = "AMD" ]; then
             ${DOCKER} run -d \
                 --device /dev/kfd \
                 --device /dev/dri \
@@ -18,6 +19,13 @@ _setup_ollama_actions() {
                 -p 11434:11434 \
                 --name ${CONTAINER_NAME} \
                 ollama/ollama:rocm
+        elif [ "$USE_GPU" = "NVIDIA" ]; then
+            ${DOCKER} run -d \
+                --gpus=all \
+                -v ${CONTAINER_VOLUME}:/root/.ollama \
+                -p 11434:11434 \
+                --name ${CONTAINER_NAME} \
+                ollama/ollama
         else
             ${DOCKER} run -d \
                 -v ${CONTAINER_VOLUME}:/root/.ollama \
