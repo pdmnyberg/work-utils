@@ -7,9 +7,24 @@ source scripts/core.sh
 _setup_ollama_actions() {
     CONTAINER_NAME="ollama"
     CONTAINER_VOLUME="ollama"
+    USE_AMD="${USE_AMD:-0}"
 
     start() {
-        ${DOCKER} run -d -v ${CONTAINER_VOLUME}:/root/.ollama -p 11434:11434 --name ${CONTAINER_NAME} ollama/ollama
+        if [ "$USE_AMD" -eq "1" ]; then
+            ${DOCKER} run -d \
+                --device /dev/kfd \
+                --device /dev/dri \
+                -v ${CONTAINER_VOLUME}:/root/.ollama \
+                -p 11434:11434 \
+                --name ${CONTAINER_NAME} \
+                ollama/ollama:rocm
+        else
+            ${DOCKER} run -d \
+                -v ${CONTAINER_VOLUME}:/root/.ollama \
+                -p 11434:11434 \
+                --name ${CONTAINER_NAME} \
+                ollama/ollama
+        fi
     }
 
     stop() {
