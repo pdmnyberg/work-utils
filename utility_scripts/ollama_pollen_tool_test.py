@@ -5,6 +5,7 @@ import datetime
 from geopy.distance import distance
 import requests
 import json
+import random
 
 
 API_ROOT = "https://api.pollenrapporten.se/v1"
@@ -121,7 +122,7 @@ def get_pollen_count(region_name: str, pollen_name: str, date: datetime.date | s
         - 'technicalError' (boolean): Indication if there was a technical error on the specified day
         - 'date': The date as an isoformatted string
 
-        The result is empty when there was no data measured for the given properties.
+        The result is None when there was no data measured for the given properties.
     """
 
     region = get_by_name(api_fetch_all("regions"), region_name)
@@ -149,7 +150,7 @@ def get_pollen_count(region_name: str, pollen_name: str, date: datetime.date | s
         data["pollen"] = pollen_name
         return json.dumps(data)
     else:
-        return None
+        return json.dumps(None)
 
 def get_distance(coord_a: tuple[float, float], coord_b: tuple[float, float]):
     """Gets the distance between two geographic coordinates in meters
@@ -182,6 +183,27 @@ def get_time():
     return datetime.datetime.now().isoformat()
 
 
+def interpolate_value(start_value: float, end_value: float, distance: float, position: float):
+    """Gets a linearly interpolated value based on start_value and end_value, where the returned value is start_value when position is 0 and the value is end_value when the position == distance.
+
+    Args:
+        'start_value' (float): The start value
+        'end_value' (float): The end value
+        'distance' (float): The range maximum
+        'position' (float): A value between 0 and 'distance' used to interpolate 'start_value' and 'end_value'
+
+    Returns:
+        The linearly interpolated value between start_value and end_value over the range from 0 to distance where position is a value within the range.
+    """
+    start_value = float(start_value)
+    end_value = float(end_value)
+    distance = float(distance)
+    position = min(max(0, float(position)), distance)
+
+    t = position / distance
+    return str(t * end_value + (1 - t) * start_value)
+
+
 available_functions = {
   "get_date": get_date,
   "get_time": get_time,
@@ -191,13 +213,17 @@ available_functions = {
   "get_pollen_types": get_pollen_types,
   "get_pollen_info": get_pollen_info,
   "get_pollen_count": get_pollen_count,
+  "interpolate_value": interpolate_value,
 }
 
+region = random.choice([r["name"] for r in api_fetch_all("regions") if r["longitude"] and r["latitude"]])
+region_message = f"What was the pollen count for birch in {region} one week ago? Only use information available in the tools. Describe the result as level of impact on allergies according to specific pollen info."
+position_message = "Estimate the pollen count at the coordinate 59.8586° N, 17.6389° E one week ago? Only use information available in the tools. Describe the result as level of impact on allergies according to specific pollen info."
 
 messages = [
     {
         "role": "user",
-        "content": "What was the pollen count for birch in Gävle one week ago? Only use information available in the tools. Describe the result as level of impact on allergies.",
+        "content": position_message,
     },
 ]
 
@@ -209,6 +235,11 @@ while True:
         tools=available_functions.values(),
         think=True,
         stream=True,
+        options={ # Make the response reproducible
+            "seed": 123,
+            "temperature": 0,
+            "num_ctx": 4096
+        }
     )
 
     thinking = ''
