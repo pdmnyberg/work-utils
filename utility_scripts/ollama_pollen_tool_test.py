@@ -218,7 +218,7 @@ available_functions = {
 
 region = random.choice([r["name"] for r in api_fetch_all("regions") if r["longitude"] and r["latitude"]])
 region_message = f"What was the pollen count for birch in {region} one week ago? Only use information available in the tools. Describe the result as level of impact on allergies according to specific pollen info."
-position_message = "Estimate the pollen count at the coordinate 59.8586° N, 17.6389° E one week ago? Only use information available in the tools. Describe the result as level of impact on allergies according to specific pollen info."
+position_message = "Estimate the pollen count for birch at the coordinate 59.8586° N, 17.6389° E one week ago? Only use information available in the tools. Describe the result as level of impact on allergies according to specific pollen info."
 
 messages = [
     {
