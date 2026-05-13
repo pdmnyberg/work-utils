@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 HELP_TEXT=${HELP_TEXT:-"This is a management script."}
 

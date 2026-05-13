@@ -3,13 +3,19 @@
 export HELP_TEXT="This script contains a number of \
 utility functions that aims to simplify the process of development. \
 The available actions are as follows:"
-source scripts/core.sh
 
 _setup_manage() {
+	SCRIPTS="${SCRIPTS:-.}"
+	source "${SCRIPTS}/core.sh"
+
 	DOCKER="${DOCKER:-docker}"
-	COMPOSE="${COMPOSE:-$DOCKER compose}"
-	SCRIPTS="scripts"
 	USE_WORKDIR="${WORKDIR:-.}"
+
+	NODE_CONTAINER=${NODE_CONTAINER:-node:24}
+	PYTHON_CONTAINER=${PYTHON_CONTAINER:-python:3.13-slim}
+	ATLAS_CONTAINER=${ATLAS_CONTAINER:-arigaio/atlas}
+	SWAGGER_CONTAINER=${SWAGGER_CONTAINER:-swaggerapi/swagger-codegen-cli:v2.4.51}
+	GO_CONTAINER=${GO_CONTAINER:-golang:1.22}
 
 	_require_workdir() {
 		if [ ! -d "${USE_WORKDIR}" ]; then
@@ -20,43 +26,51 @@ _setup_manage() {
 
 	_run_with_workdir() {
 		_require_workdir
-		${COMPOSE} run --rm --workdir "/opt/output/${USE_WORKDIR}" "$@"
+		${DOCKER} run \
+			-it \
+			--rm \
+			--user $(id -u):$(id -g) \
+			-v ./:/opt/output \
+			--workdir "/opt/output/${USE_WORKDIR}" \
+			"$@"
 	}
 
 	node() {
-		_run_with_workdir node node "$@"
+		_run_with_workdir ${NODE_CONTAINER} node "$@"
 	}
 
 	node-shell() {
-		_run_with_workdir --entrypoint bash node
+		_run_with_workdir --entrypoint bash ${NODE_CONTAINER}
 	}
 
 	npm() {
-		_run_with_workdir node npm "$@"
+		_run_with_workdir ${NODE_CONTAINER} npm "$@"
 	}
 
 	npx() {
-		_run_with_workdir node npx "$@"
+		_run_with_workdir ${NODE_CONTAINER} npx "$@"
 	}
 
 	go() {
-		_run_with_workdir go go "$@"
+		_run_with_workdir \
+			-e GOCACHE="/opt/output/.go-cache" \
+			${GO_CONTAINER} go "$@"
 	}
 
 	python() {
-		_run_with_workdir python python "$@"
+		_run_with_workdir ${PYTHON_CONTAINER} python "$@"
 	}
 
 	python-shell() {
-		_run_with_workdir python bash "$@"
+		_run_with_workdir ${PYTHON_CONTAINER} bash "$@"
 	}
 
 	atlas() {
-		_run_with_workdir atlas "$@"
+		_run_with_workdir ${ATLAS_CONTAINER} "$@"
 	}
 
 	swagger-cli() {
-		_run_with_workdir swagger-cli "$@"
+		_run_with_workdir ${SWAGGER_CONTAINER} "$@"
 	}
 
 	vm() {

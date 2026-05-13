@@ -2,9 +2,10 @@
 
 export HELP_TEXT="This scripts contains \
 utility functions that start and manage ollama:"
-source scripts/core.sh
 
 _setup_ollama_actions() {
+    source "${SCRIPTS}/core.sh"
+
     DOCKER="${DOCKER:-docker}"
     CONTAINER_NAME="ollama"
     CONTAINER_VOLUME="ollama"

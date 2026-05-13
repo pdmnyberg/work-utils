@@ -2,9 +2,10 @@
 
 export HELP_TEXT="This script contains a number of \
 utility functions that aims to simplify using vms on the command line:"
-source scripts/core.sh
 
 _setup_vm_actions() {
+    source "${SCRIPTS}/core.sh"
+
     DISKS="vms/disks"
     ISOS="vms/isos"
 

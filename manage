@@ -2,8 +2,10 @@
 
 # This script is an alias for "scripts/manage.sh"
 
-MANAGE_SCRIPT="scripts/manage.sh"
+SCRIPTS="scripts"
+MANAGE_SCRIPT="${SCRIPTS}/manage.sh"
 source "${MANAGE_SCRIPT}"
+source "${SCRIPTS}/core.sh"
 
 TC="\e[0;31m"
 SC="\e[0;32m"
