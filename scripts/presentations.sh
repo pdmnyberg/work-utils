@@ -5,12 +5,15 @@ utility functions that work for presentations:"
 source scripts/core.sh
 
 _setup_presentation_actions() {
+    DOCKER="${DOCKER:-docker}"
+    COMPOSE="${COMPOSE:-$DOCKER compose}"
+
     build() {
-        docker compose run --rm --workdir=/opt/build/presentations document-builder make "$@"
+        ${COMPOSE} run --rm --workdir=/opt/build/presentations document-builder make "$@"
     }
 
     build-diagrams() {
-        docker compose run --rm --workdir=/opt/build/diagrams document-builder make "$@"
+        ${COMPOSE} run --rm --workdir=/opt/build/diagrams document-builder make "$@"
     }
 
     _add_action "build" "Build all presentations"

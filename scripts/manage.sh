@@ -6,8 +6,8 @@ The available actions are as follows:"
 source scripts/core.sh
 
 _setup_manage() {
-	DOCKER="docker"
-	COMPOSE="${DOCKER} compose"
+	DOCKER="${DOCKER:-docker}"
+	COMPOSE="${COMPOSE:-$DOCKER compose}"
 	SCRIPTS="scripts"
 	USE_WORKDIR="${WORKDIR:-.}"
 
