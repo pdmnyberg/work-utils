@@ -12,7 +12,7 @@ _setup_ollama_actions() {
 
     start() {
         if [ "$USE_GPU" = "AMD" ]; then
-            ${DOCKER} run -d \
+            ${DOCKER} run --rm -d \
                 --device /dev/kfd \
                 --device /dev/dri \
                 -v ${CONTAINER_VOLUME}:/root/.ollama \
@@ -20,14 +20,14 @@ _setup_ollama_actions() {
                 --name ${CONTAINER_NAME} \
                 ollama/ollama:rocm
         elif [ "$USE_GPU" = "NVIDIA" ]; then
-            ${DOCKER} run -d \
+            ${DOCKER} run --rm -d \
                 --gpus=all \
                 -v ${CONTAINER_VOLUME}:/root/.ollama \
                 -p 11434:11434 \
                 --name ${CONTAINER_NAME} \
                 ollama/ollama
         else
-            ${DOCKER} run -d \
+            ${DOCKER} run --rm -d \
                 -v ${CONTAINER_VOLUME}:/root/.ollama \
                 -p 11434:11434 \
                 --name ${CONTAINER_NAME} \
@@ -37,7 +37,6 @@ _setup_ollama_actions() {
 
     stop() {
         ${DOCKER} stop ${CONTAINER_NAME}
-        ${DOCKER} rm ${CONTAINER_NAME}
     }
 
     cmd() {
