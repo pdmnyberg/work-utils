@@ -1,18 +1,26 @@
 #!/bin/bash
 
-# This script is an alias for "scripts/manage.sh"
+# This script is a configurable alias for "scripts/manage.sh"
 
-SCRIPTS="scripts"
+###########################################################
+# Configuration section
+# ---------------------------------------------------------
+# Use this section to configure the directories to use when
+# running the utility scripts.
+# Make a copy of the script and place it where it is
+# conveniently available. Change 'SCRIPTS' to point to the
+# folder containing the utility script `manage.sh`.
+###########################################################
+SCRIPTS="./scripts"
+PRESENTATIONS_PATH="./presentations"
+DIAGRAMS_PATH="./diagrams"
+VMDIR="./vms"
+PRESENTATIONS_COMMON_STYLE="src/meerkatsstyle.tex"
+###########################################################
+# End configuration section
+###########################################################
+
 MANAGE_SCRIPT="${SCRIPTS}/manage.sh"
 source "${MANAGE_SCRIPT}"
-source "${SCRIPTS}/core.sh"
-
-TC="\e[0;31m"
-SC="\e[0;32m"
-NC="\e[0m"
-_info "${TC}Notice${NC}: This is a wrapper script for ${SC}'${MANAGE_SCRIPT}'${NC}. Use \
-${SC}'source ${MANAGE_SCRIPT}'${NC} in order to get a real 'manage' command \
-with auto completions.
-"
 
 manage "$@"
