@@ -3,6 +3,7 @@
   "version": "1.0",
   "description": "A balanced dataset of 40 easy-to-answer multiple-choice questions for a teamwork and project-oriented animal archetype assessment. Each answer includes weighted affinity scores for six animal species. Scores are relative and can be summed across responses.",
   "target_id": "species",
+  "target_label": "Species",
   "species": {
     "meerkat": "Meerkat",
     "sloth": "Sloth",

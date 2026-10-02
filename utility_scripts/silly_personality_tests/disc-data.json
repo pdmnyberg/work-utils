@@ -3,6 +3,7 @@
   "version": "1.0",
   "description": "A balanced dataset of 40 easy-to-answer multiple-choice questions for a DiSC-style assessment. Each answer includes weighted affinity scores for D, i, S, and C personality dimensions. Scores are relative and can be summed across responses.",
   "target_id": "personality_types",
+  "target_label": "Personality Types",
   "personality_types": {
     "D": "Dominance",
     "i": "Influence",

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Assessment Runner</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --border: #d1d5db;
+      --success: #065f46;
+      --success-bg: #d1fae5;
+      --warning: #92400e;
+      --warning-bg: #fef3c7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      margin-bottom: 20px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+    }
+
+    p {
+      margin: 8px 0 16px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 220px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-family: Consolas, monospace;
+      font-size: 14px;
+      background: #fcfcfd;
+    }
+
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: var(--accent-hover);
+    }
+
+    button.secondary {
+      background: #6b7280;
+    }
+
+    button.secondary:hover {
+      background: #4b5563;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .status {
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .status.warning {
+      background: var(--warning-bg);
+      color: var(--warning);
+    }
+
+    .status.success {
+      background: var(--success-bg);
+      color: var(--success);
+    }
+
+    .question-box {
+      margin-top: 10px;
+    }
+
+    .question-number {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .question-text {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    .answers {
+      display: grid;
+      gap: 10px;
+    }
+
+    .answer-btn {
+      display: block;
+      width: 100%;
+      text-align: left;
+      background: #f9fafb;
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      cursor: pointer;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .answer-btn:hover {
+      border-color: var(--accent);
+      background: #eff6ff;
+    }
+
+    .progress {
+      margin: 16px 0;
+      height: 12px;
+      background: #e5e7eb;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--accent);
+      width: 0%;
+      transition: width 0.2s ease;
+    }
+
+    .result-list, .breakdown-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .result-item, .breakdown-item {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background: #fafafa;
+    }
+
+    .result-item strong {
+      font-size: 18px;
+    }
+
+    .small {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .top-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e0e7ff;
+      color: #3730a3;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    input[type="file"] {
+      margin-top: 10px;
+    }
+
+    .footer-note {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" id="loaderCard">
+      <h1>Interactive Assessment Runner</h1>
+      <p class="muted">
+        Load a JSON dataset and run it as an interactive test. This supports both:
+      </p>
+      <ul>
+        <li>DiSC-style datasets with <code>personality_types</code></li>
+        <li>Animal archetype datasets with <code>species</code></li>
+      </ul>
+
+      <h3>Option 1: Paste dataset JSON</h3>
+      <textarea id="datasetInput" placeholder="Paste your dataset JSON here..."></textarea>
+
+      <h3>Option 2: Load JSON file</h3>
+      <input type="file" id="fileInput" accept=".json,application/json" />
+
+      <div>
+        <button id="startBtn">Load Dataset</button>
+        <button id="clearBtn" class="secondary">Clear</button>
+      </div>
+
+      <div id="loadStatus" class="status warning hidden"></div>
+      <div class="footer-note">
+        The page is fully self-contained. No external libraries are used.
+      </div>
+    </div>
+
+    <div class="card hidden" id="testCard">
+      <div class="top-bar">
+        <div>
+          <h2 id="testTitle">Assessment</h2>
+          <div class="muted" id="testDescription"></div>
+        </div>
+        <div class="pill" id="targetTypeLabel">Targets</div>
+      </div>
+
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="question-box">
+        <div class="question-number" id="questionNumber"></div>
+        <div class="question-text" id="questionText"></div>
+        <div class="answers" id="answersContainer"></div>
+      </div>
+
+      <div>
+        <button id="restartBtn" class="secondary">Restart</button>
+        <button id="loadAnotherBtn" class="secondary">Load Another Dataset</button>
+      </div>
+    </div>
+
+    <div class="card hidden" id="resultCard">
+      <h2>Results</h2>
+      <p class="muted">Top two matching target types and full score breakdown.</p>
+
+      <h3>Best Matches</h3>
+      <ul class="result-list" id="topResults"></ul>
+
+      <h3>Full Breakdown</h3>
+      <ul class="breakdown-list" id="fullBreakdown"></ul>
+
+      <div>
+        <button id="retakeBtn">Retake Test</button>
+        <button id="newDatasetBtn" class="secondary">Load Another Dataset</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let dataset = null;
+    let targets = null;
+    let targetGroupName = "Targets";
+    let currentQuestionIndex = 0;
+    let scores = {};
+
+    const datasetInput = document.getElementById("datasetInput");
+    const fileInput = document.getElementById("fileInput");
+    const startBtn = document.getElementById("startBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const loadStatus = document.getElementById("loadStatus");
+
+    const loaderCard = document.getElementById("loaderCard");
+    const testCard = document.getElementById("testCard");
+    const resultCard = document.getElementById("resultCard");
+
+    const testTitle = document.getElementById("testTitle");
+    const testDescription = document.getElementById("testDescription");
+    const targetTypeLabel = document.getElementById("targetTypeLabel");
+    const questionNumber = document.getElementById("questionNumber");
+    const questionText = document.getElementById("questionText");
+    const answersContainer = document.getElementById("answersContainer");
+    const progressBar = document.getElementById("progressBar");
+
+    const topResults = document.getElementById("topResults");
+    const fullBreakdown = document.getElementById("fullBreakdown");
+
+    const restartBtn = document.getElementById("restartBtn");
+    const loadAnotherBtn = document.getElementById("loadAnotherBtn");
+    const retakeBtn = document.getElementById("retakeBtn");
+    const newDatasetBtn = document.getElementById("newDatasetBtn");
+
+    function showStatus(message, type = "warning") {
+      loadStatus.textContent = message;
+      loadStatus.className = "status " + type;
+      loadStatus.classList.remove("hidden");
+    }
+
+    function hideStatus() {
+      loadStatus.classList.add("hidden");
+    }
+
+    function resetAll() {
+      dataset = null;
+      targets = null;
+      targetGroupName = "Targets";
+      currentQuestionIndex = 0;
+      scores = {};
+      datasetInput.value = "";
+      fileInput.value = "";
+      hideStatus();
+      loaderCard.classList.remove("hidden");
+      testCard.classList.add("hidden");
+      resultCard.classList.add("hidden");
+    }
+
+    function detectTargets(data) {
+      const targetId = data.target_id ?? "targets";
+      const targets = data[targetId]
+      if (targets && typeof targets === "object") {
+        return {
+          targets,
+          label: data.target_label ?? targetId
+        }
+      }
+      throw new Error("Dataset must contain either 'personality_types' or 'species'.");
+    }
+
+    function validateDataset(data) {
+      if (!data || typeof data !== "object") {
+        throw new Error("Dataset must be a JSON object.");
+      }
+      if (!Array.isArray(data.questions) || data.questions.length === 0) {
+        throw new Error("Dataset must contain a non-empty 'questions' array.");
+      }
+
+      const detected = detectTargets(data);
+
+      data.questions.forEach((q, index) => {
+        if (typeof q.question !== "string" || !q.question.trim()) {
+          throw new Error(`Question ${index + 1} is missing valid 'question' text.`);
+        }
+        if (!Array.isArray(q.answers) || q.answers.length === 0) {
+          throw new Error(`Question ${index + 1} must have a non-empty 'answers' array.`);
+        }
+        q.answers.forEach((a, aIndex) => {
+          if (typeof a.text !== "string" || !a.text.trim()) {
+            throw new Error(`Question ${index + 1}, answer ${aIndex + 1} is missing valid 'text'.`);
+          }
+          if (!a.scores || typeof a.scores !== "object") {
+            throw new Error(`Question ${index + 1}, answer ${aIndex + 1} is missing 'scores'.`);
+          }
+        });
+      });
+
+      return detected;
+    }
+
+    function initializeScores() {
+      scores = {};
+      Object.keys(targets).forEach(key => {
+        scores[key] = 0;
+      });
+    }
+
+    function startAssessment(data) {
+      dataset = data;
+      const detected = validateDataset(dataset);
+      targets = detected.targets;
+      targetGroupName = detected.label;
+      initializeScores();
+      currentQuestionIndex = 0;
+
+      testTitle.textContent = dataset.name || "Interactive Assessment";
+      testDescription.textContent = dataset.description || "";
+      targetTypeLabel.textContent = targetGroupName;
+
+      loaderCard.classList.add("hidden");
+      resultCard.classList.add("hidden");
+      testCard.classList.remove("hidden");
+
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const totalQuestions = dataset.questions.length;
+      const q = dataset.questions[currentQuestionIndex];
+
+      questionNumber.textContent = `Question ${currentQuestionIndex + 1} of ${totalQuestions}`;
+      questionText.textContent = q.question;
+      answersContainer.innerHTML = "";
+
+      const progress = (currentQuestionIndex / totalQuestions) * 100;
+      progressBar.style.width = progress + "%";
+
+      q.answers.forEach((answer, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "answer-btn";
+        const optionId = (answer.id || String.fromCharCode(65 + idx)).toUpperCase();
+        btn.innerHTML = `<strong>${optionId}.</strong> ${escapeHtml(answer.text)}`;
+        btn.addEventListener("click", () => selectAnswer(answer));
+        answersContainer.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(answer) {
+      const answerScores = answer.scores || {};
+      Object.keys(scores).forEach(key => {
+        scores[key] += Number(answerScores[key] || 0);
+      });
+
+      currentQuestionIndex += 1;
+
+      if (currentQuestionIndex >= dataset.questions.length) {
+        showResults();
+      } else {
+        renderQuestion();
+      }
+    }
+
+    function computePercentages(scoreMap) {
+      const total = Object.values(scoreMap).reduce((sum, value) => sum + value, 0);
+      const percentages = {};
+      Object.keys(scoreMap).forEach(key => {
+        percentages[key] = total > 0 ? (scoreMap[key] / total) * 100 : 0;
+      });
+      return percentages;
+    }
+
+    function showResults() {
+      testCard.classList.add("hidden");
+      resultCard.classList.remove("hidden");
+
+      progressBar.style.width = "100%";
+
+      const percentages = computePercentages(scores);
+      const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+
+      topResults.innerHTML = "";
+      fullBreakdown.innerHTML = "";
+
+      ranked.slice(0, 2).forEach(([key, score], idx) => {
+        const label = targets[key] || key;
+        const li = document.createElement("li");
+        li.className = "result-item";
+        li.innerHTML = `
+          <strong>${idx + 1}. ${escapeHtml(label)}</strong>
+          <div class="small">Key: ${escapeHtml(key)}</div>
+          <div>${percentages[key].toFixed(1)}%</div>
+        `;
+        topResults.appendChild(li);
+      });
+
+      ranked.forEach(([key, score]) => {
+        const label = targets[key] || key;
+        const li = document.createElement("li");
+        li.className = "breakdown-item";
+        li.innerHTML = `
+          <strong>${escapeHtml(label)}</strong>
+          <div class="small">Key: ${escapeHtml(key)}</div>
+          <div>${percentages[key].toFixed(1)}% &nbsp; | &nbsp; Raw score: ${Number(score).toFixed(1)}</div>
+        `;
+        fullBreakdown.appendChild(li);
+      });
+    }
+
+    function retakeCurrentTest() {
+      if (!dataset || !targets) return;
+      initializeScores();
+      currentQuestionIndex = 0;
+      resultCard.classList.add("hidden");
+      testCard.classList.remove("hidden");
+      renderQuestion();
+    }
+
+    function parseAndStartFromText(text) {
+      let parsed;
+      try {
+        parsed = JSON.parse(text);
+      } catch (err) {
+        throw new Error("Invalid JSON format.");
+      }
+      startAssessment(parsed);
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    startBtn.addEventListener("click", async () => {
+      hideStatus();
+
+      const pasted = datasetInput.value.trim();
+      const file = fileInput.files[0];
+
+      try {
+        if (pasted) {
+          parseAndStartFromText(pasted);
+          return;
+        }
+
+        if (file) {
+          const text = await file.text();
+          parseAndStartFromText(text);
+          return;
+        }
+
+        showStatus("Please paste dataset JSON or select a JSON file.", "warning");
+      } catch (err) {
+        showStatus(err.message || "Failed to load dataset.", "warning");
+      }
+    });
+
+    clearBtn.addEventListener("click", () => {
+      datasetInput.value = "";
+      fileInput.value = "";
+      hideStatus();
+    });
+
+    restartBtn.addEventListener("click", retakeCurrentTest);
+    retakeBtn.addEventListener("click", retakeCurrentTest);
+    loadAnotherBtn.addEventListener("click", resetAll);
+    newDatasetBtn.addEventListener("click", resetAll);
+  </script>
+</body>
+</html>
