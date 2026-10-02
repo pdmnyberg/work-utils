@@ -1,0 +1,1469 @@
+{
+  "name": "Teamwork Animal Archetypes Assessment Dataset",
+  "version": "1.0",
+  "description": "A balanced dataset of 40 easy-to-answer multiple-choice questions for a teamwork and project-oriented animal archetype assessment. Each answer includes weighted affinity scores for six animal species. Scores are relative and can be summed across responses.",
+  "target_id": "species",
+  "species": {
+    "meerkat": "Meerkat",
+    "sloth": "Sloth",
+    "wolf": "Wolf",
+    "dolphin": "Dolphin",
+    "beaver": "Beaver",
+    "owl": "Owl"
+  },
+  "scoring_notes": {
+    "scale": "Each answer provides affinity scores from 0 to 3 for each species.",
+    "interpretation": "Higher scores indicate stronger alignment with that species archetype in collaborative work and project settings.",
+    "usage": "For each selected answer, add the associated scores to cumulative totals for each species."
+  },
+  "archetype_summaries": {
+    "meerkat": "Alert, cooperative, communicative, and quick to coordinate with the group.",
+    "sloth": "Calm, steady, thoughtful, patient, and resistant to unnecessary rush.",
+    "wolf": "Goal-driven, decisive, strategic, and comfortable leading a coordinated effort.",
+    "dolphin": "Social, creative, energizing, adaptive, and strong at group morale.",
+    "beaver": "Practical, reliable, organized, and focused on building solid outcomes.",
+    "owl": "Analytical, observant, careful, and focused on clarity, logic, and quality."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "When a new team project begins, what do you usually do first?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Check in with everyone so the group is coordinated.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 1, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Take a moment to understand the pace and settle into the work.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Set a clear direction and push the team toward a goal.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Get people excited and spark ideas together.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "E",
+          "text": "Start organizing tasks and building a practical plan.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Review the information carefully before acting.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In team meetings, you are most likely to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Notice who has spoken and who has not, and keep everyone connected.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Stay calm and listen carefully before speaking.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Drive the discussion toward decisions.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Bring energy and keep the room engaged.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Keep notes, track tasks, and make sure the meeting is useful.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Ask clarifying questions and look for missing details.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "A deadline suddenly becomes much shorter. What is your first reaction?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Quickly coordinate with the team so everyone knows the new plan.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Stay calm and keep working steadily without panicking.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Take control and make fast decisions.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Keep morale up so people do not lose momentum.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Rework the task list to keep the team efficient.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Figure out which details matter most so errors are avoided.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What role do you naturally take in a team?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "The lookout who keeps everyone aware and connected.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "The steady presence who helps keep things calm.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "The leader who keeps everyone moving toward the goal.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "The motivator who lifts energy and creativity.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "The builder who gets systems and processes in place.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "The analyst who spots patterns and asks smart questions.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "When solving a team problem, you prefer to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Make sure everyone shares what they are seeing.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Slow things down so the team does not overreact.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Choose a direction and commit to it.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Brainstorm lots of possible ideas together.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "E",
+          "text": "Break the problem into steps and assign work.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Study the root cause before proposing a fix.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "If a teammate seems left out during a project, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Pull them back into the group and check what they need.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Give them space and gently support them when the time feels right.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Refocus them on their responsibility and expected result.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Cheer them up and help them feel included.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Find a practical task they can contribute to right away.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 0 }
+        },
+        {
+          "id": "F",
+          "text": "Observe first to understand why they are disengaged.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What kind of team pace suits you best?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Active and responsive, with lots of communication.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Measured and calm, with time to think.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Fast and purposeful, with clear momentum.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Dynamic and energetic, with room for spontaneity.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Consistent and productive, with useful routines.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Deliberate and well-planned, with clear logic.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When tasks are unclear, what do you most want to do?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Quickly ask around so the team is aligned.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Wait a moment and let things settle before acting.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Choose the best direction and move forward.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Talk it through openly and explore possibilities.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "E",
+          "text": "Turn the uncertainty into a workable checklist.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Ask for precise definitions and needed information.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "How do you usually help a team stay effective?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "By keeping people aware of each other and possible issues.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "By staying reliable and not adding stress.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "By pushing toward results and accountability.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "By bringing positivity and fresh thinking.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "By building dependable systems and follow-through.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "By checking facts and protecting quality.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What type of contribution feels most natural to you in a project?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Watching for changes and keeping the group coordinated.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Bringing patience and steadiness when pressure rises.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Setting targets and making sure they are met.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Helping the team stay enthusiastic and connected.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Making sure the work is built solidly and practically.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Thinking through details and spotting what others miss.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "If your team hits a setback, you are most likely to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Alert everyone quickly and help the group regroup.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Remain calm and remind others not to panic.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Step up, redirect effort, and move forward.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Lift team spirit so people stay hopeful.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Repair the plan and reassign work where needed.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Study what caused the setback before changing course.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How do you prefer teammates to communicate with you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Frequent updates so everyone stays aware.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Calmly and without unnecessary urgency.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Clearly and directly, especially about goals.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Openly and warmly, with room for discussion.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "With practical next steps and clear responsibilities.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "With enough detail to fully understand the issue.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "If two teammates disagree strongly, what do you tend to do?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Help the group stay connected and avoid miscommunication.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keep the atmosphere calm and reduce tension.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Push the team toward a decision so progress continues.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Keep people talking until they reconnect.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Bring the focus back to the task and agreed process.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Look at the evidence and sort out what is most accurate.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What kind of project challenge energizes you most?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Keeping a group aligned in a fast-changing situation.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Helping a team stay steady over a long effort.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Competing against a difficult target and winning.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Creating excitement and momentum in the group.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Building something useful and dependable.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Untangling a difficult problem with careful thinking.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "When a project needs quick adaptation, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Spread awareness fast so no one is caught off guard.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Adjust slowly and carefully so the team stays balanced.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Make a call and lead the shift.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Encourage others and stay upbeat during the change.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Rebuild the workflow into something workable.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Look at what changed and what the new risks are.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Your ideal project team is one that:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Shares information openly and stays alert together.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Works calmly and supports a sustainable pace.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Knows the goal and moves together with discipline.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Feels lively, creative, and fun to work with.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Builds useful systems and gets real work done.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Values careful thinking and sound decisions.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "When dividing work across a team, you tend to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Check that everyone understands each other’s roles.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Make sure no one is overloaded too quickly.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Assign work based on what will get results fastest.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Match tasks with what people seem excited to do.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Organize tasks in a practical and balanced way.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Match tasks to the skills and requirements carefully.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "What is your usual response to messy project details?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Check with others to make sure nothing important is missed.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Tackle them slowly and avoid rushing into confusion.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Ignore small messiness if the core goal is still clear.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Keep things moving and not get too stuck in details.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Put the details into a cleaner structure.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Sort through them carefully until they make sense.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "When another team is waiting on your group, you usually focus on:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Keeping communication active so no one is surprised.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Not adding stress by reacting too quickly.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Delivering what they need as fast as possible.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Maintaining a positive relationship while you coordinate.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Making sure the handoff is practical and complete.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Ensuring the information you send is correct and clear.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How do you typically react when a teammate proposes a risky idea?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "See how the rest of the team feels and whether everyone is ready.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Prefer a slower, safer approach if possible.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Take the risk if it could lead to a strong result.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Get excited about the possibility and talk it through.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Ask whether the idea can be turned into a workable plan.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Examine the assumptions and likely consequences.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Which project success feels most satisfying to you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Everyone worked together smoothly and stayed aware.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "The team stayed balanced and did not burn out.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "The goal was difficult, and your team still won.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "People felt inspired and gave their best energy.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "The final result was practical, strong, and dependable.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "The solution was elegant, smart, and well reasoned.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "When work becomes repetitive, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Keep checking that the team is still aligned and alert.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Stay patient and keep going steadily.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Focus on finishing it and moving the team ahead.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Add some energy or creativity to make it more engaging.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Refine the routine so the work flows better.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Use the repetition to notice patterns and improvements.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "What kind of feedback do you most often give teammates?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Updates that help everyone stay aware of what is happening.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Calm, supportive feedback that helps them improve steadily.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Direct feedback focused on results and expectations.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Encouraging feedback that keeps confidence high.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Practical suggestions for making the work function better.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Detailed feedback based on what the work shows.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "In a cross-functional project, you usually help by:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Connecting people and making sure the teams stay in sync.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Providing a stable presence while different teams adjust.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Keeping everyone focused on the shared objective.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Helping build relationships and enthusiasm across groups.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Creating structure that helps the teams work together.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Clarifying assumptions and surfacing important differences.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "If the team has too many ideas and not enough focus, you tend to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Listen for what the group is converging on and help align them.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Encourage patience and not rushing the choice.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Choose a direction and ask the team to commit.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Keep the ideas flowing until something exciting stands out.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Turn the best ideas into an actionable short list.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Evaluate each idea against clear criteria.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "When people on the team are stressed, what is your instinct?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Stay aware of everyone and help the group support each other.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Project calm and slow the tempo down.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Cut distractions and refocus on the target.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Bring encouragement and lighten the mood.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Reduce confusion by improving the workflow.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Look for the exact source of the stress or bottleneck.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "What kind of project leader do you respond to best?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "One who keeps everyone informed and aware.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "One who is patient and steady under pressure.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "One who is decisive and goal-focused.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "One who is inspiring and socially engaging.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "One who is practical and well organized.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "One who is thoughtful and precise.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "How do you usually approach project planning?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Plan around who needs to know what and when.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keep the plan realistic and not overloaded.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Set milestones that keep the team moving strongly.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Make sure the plan leaves room for creative ideas.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Lay out a practical sequence of tasks and owners.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Identify assumptions, dependencies, and risks first.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "When reviewing a team's work, what do you notice first?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Whether everyone seems coordinated and informed.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Whether the workload seems manageable and steady.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Whether the work is moving the team toward its goal.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Whether people seem engaged and energized.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Whether the work is practical and well structured.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Whether the logic, detail, and quality hold up.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "If a teammate is moving too fast and making mistakes, you are likely to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Check in so the team stays aware of the issue early.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Encourage them to slow down and work more steadily.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Tell them directly to focus and deliver properly.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Keep the conversation upbeat while redirecting them.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Suggest a better process or checklist.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Point to the exact errors and explain the pattern.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "question": "What kind of team recognition matters most to you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Being valued for helping the team stay connected and aware.",
+          "scores": { "meerkat": 3, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Being appreciated for your calm and consistency.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Being respected for leading the team to results.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Being known for lifting the group's energy and spirit.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Being trusted for building something solid and useful.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Being respected for your insight and accuracy.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "question": "What are you most likely to do in the first 10 minutes of a workshop?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "See who is in the room and help people orient to each other.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Settle in and observe the group's rhythm before jumping in.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Push to define the objective and expected outcome quickly.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Start conversation and get the group feeling engaged.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Look for tools, materials, and how the session is organized.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 0, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Listen for assumptions, definitions, and what problem is being solved.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "question": "When your team has to present its work, you usually want to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Make sure the handoff is clear and everyone knows their part.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Help keep the group calm and comfortable during the presentation.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Lead with the strongest result and key message.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Engage the audience and keep the presentation lively.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Show the process and practical value clearly.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Explain the reasoning and evidence behind the work.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "question": "When something important might go wrong in a project, your instinct is to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Raise awareness early so the group can respond together.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Stay composed and avoid overreacting.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Act quickly and decisively to reduce the threat.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Keep the team optimistic while working through it.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Put safeguards and practical fixes in place.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Analyze the risk carefully before deciding what to do.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "question": "How do you usually feel about changing roles on a project?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Fine with it if everyone stays coordinated.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Prefer changes to happen gradually and clearly.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "Comfortable if it helps the team win.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Open to it, especially if it creates new opportunities.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Comfortable if the responsibilities are practical and defined.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Need to understand the new role and expectations clearly.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "question": "If a team member is confused about the plan, you are most likely to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Reconnect them with the group so they can see the full picture.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Explain it calmly and not overwhelm them.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Clarify the expected outcome and what must happen next.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Talk it through in an engaging and encouraging way.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Show them a simple process or example to follow.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Break the plan into clear parts and explain the logic.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "question": "What kind of team habit do you value most?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Regular check-ins so everyone knows what is happening.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "B",
+          "text": "A steady rhythm that people can rely on.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Clear commitments and visible progress toward goals.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "An atmosphere where people openly share ideas.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "A process that helps work get done smoothly.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "A habit of asking careful, thoughtful questions.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "question": "During a difficult team decision, what matters most to you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "That everyone has enough awareness to move together.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "That the team does not rush into something unwise.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "C",
+          "text": "That a decision gets made and progress continues.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "That people stay engaged and optimistic about the direction.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "That the chosen direction can actually be executed well.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "That the reasoning is sound and the evidence is strong.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "question": "Which statement sounds most like you in group work?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "I help the team stay alert, connected, and aware.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 0, "dolphin": 1, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "I help the team stay calm, patient, and steady.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "I help the team focus, commit, and win.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "I help the team connect, create, and stay energized.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "I help the team build, organize, and deliver.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "I help the team think clearly and avoid mistakes.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "question": "What are you most likely to bring to a project team?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Awareness, coordination, and group support.",
+          "scores": { "meerkat": 3, "sloth": 0, "wolf": 1, "dolphin": 0, "beaver": 0, "owl": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Patience, steadiness, and calm follow-through.",
+          "scores": { "meerkat": 0, "sloth": 3, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Direction, drive, and decisive action.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 3, "dolphin": 0, "beaver": 1, "owl": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Energy, creativity, and positive momentum.",
+          "scores": { "meerkat": 1, "sloth": 0, "wolf": 0, "dolphin": 3, "beaver": 0, "owl": 0 }
+        },
+        {
+          "id": "E",
+          "text": "Practical organization and dependable execution.",
+          "scores": { "meerkat": 0, "sloth": 1, "wolf": 1, "dolphin": 0, "beaver": 3, "owl": 1 }
+        },
+        {
+          "id": "F",
+          "text": "Insight, precision, and careful judgment.",
+          "scores": { "meerkat": 0, "sloth": 0, "wolf": 0, "dolphin": 0, "beaver": 1, "owl": 3 }
+        }
+      ]
+    }
+  ]
+}

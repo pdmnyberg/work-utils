@@ -1,0 +1,1059 @@
+{
+  "name": "DiSC Assessment Dataset",
+  "version": "1.0",
+  "description": "A balanced dataset of 40 easy-to-answer multiple-choice questions for a DiSC-style assessment. Each answer includes weighted affinity scores for D, i, S, and C personality dimensions. Scores are relative and can be summed across responses.",
+  "target_id": "personality_types",
+  "personality_types": {
+    "D": "Dominance",
+    "i": "Influence",
+    "S": "Steadiness",
+    "C": "Conscientiousness"
+  },
+  "scoring_notes": {
+    "scale": "Each answer provides affinity scores from 0 to 3 for each DiSC dimension.",
+    "interpretation": "Higher scores indicate stronger alignment with that personality dimension.",
+    "usage": "For each selected answer, add the associated scores to cumulative D, i, S, and C totals."
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "When starting a new project, what do you usually do first?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Set a bold goal and move quickly.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Talk with others and build excitement.",
+          "scores": { "D": 1, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Make sure everyone is comfortable with the plan.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Review the details and create a structured plan.",
+          "scores": { "D": 1, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "In a group discussion, you are most likely to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Take charge and steer the conversation.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Share ideas enthusiastically and keep energy high.",
+          "scores": { "D": 1, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Listen carefully and support quieter people.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Focus on facts and clarify the details.",
+          "scores": { "D": 0, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "When you face a tight deadline, you tend to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Push hard and make fast decisions.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keep morale high and encourage others.",
+          "scores": { "D": 1, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Stay calm and work steadily.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Prioritize accuracy and organize tasks carefully.",
+          "scores": { "D": 1, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Which kind of work environment do you prefer?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Fast-paced and competitive.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Social, lively, and interactive.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Stable, friendly, and cooperative.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Organized, clear, and structured.",
+          "scores": { "D": 0, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "If a plan suddenly changes, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Adapt quickly and take control.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Look for the positive and rally people.",
+          "scores": { "D": 1, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Need a little time, then settle into the new direction.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Want to understand exactly what changed and why.",
+          "scores": { "D": 0, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How do you usually make decisions?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Quickly and confidently.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Based on what feels inspiring or exciting.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "By considering people and maintaining harmony.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "By reviewing information carefully.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Others often describe you as:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Direct and determined.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Outgoing and enthusiastic.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Patient and dependable.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Thoughtful and precise.",
+          "scores": { "D": 0, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "When learning something new, you prefer to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Jump in and figure it out as you go.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Learn with others and discuss ideas.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Take your time and build confidence gradually.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Read instructions and understand the process first.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What motivates you most at work?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Achieving ambitious results.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Recognition and positive interaction.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Security and supportive relationships.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "High standards and quality work.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "When working with a team, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Focus on winning and moving fast.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keep people engaged and connected.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Help maintain cooperation and consistency.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Ensure the process is accurate and efficient.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "If a conflict comes up, your first instinct is to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Address it head-on and solve it quickly.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Talk it through openly and positively.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Seek peace and reduce tension.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Look at the facts before responding.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "How do you prefer to organize your day?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Keep it flexible so you can respond fast.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Leave room for spontaneous conversations and ideas.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Follow a comfortable, steady routine.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Plan it carefully with clear priorities.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "When giving feedback, you tend to be:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Straightforward and candid.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Encouraging and expressive.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Gentle and considerate.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Specific and evidence-based.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What kind of tasks do you enjoy most?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Challenging tasks with big outcomes.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Creative tasks involving people.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Helpful tasks that support others.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Analytical tasks that require accuracy.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "In meetings, you usually prefer:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Short meetings with clear decisions.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Interactive meetings with open discussion.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Calm meetings where everyone gets heard.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Well-prepared meetings with a clear agenda.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "How do you usually respond to risk?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Take it if the reward is worth it.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Feel energized by new possibilities.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Prefer safer, more predictable options.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Assess it carefully before acting.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "If you are assigned a leadership role, you tend to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Set direction and expect results.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Inspire the group and keep momentum high.",
+          "scores": { "D": 1, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Support the team and build trust.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Define roles and make expectations clear.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "When someone asks for your help, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Offer a quick solution.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Jump in with enthusiasm.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Patiently support them through it.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Help by explaining the correct method.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What do you value most in communication?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Clarity and speed.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Warmth and energy.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Kindness and understanding.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Accuracy and completeness.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "What is your usual approach to solving problems?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Act fast and remove obstacles.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Brainstorm openly with others.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Work through it steadily and patiently.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Analyze the root cause carefully.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "How do you feel about routine tasks?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Prefer to finish them quickly and move on.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Like them more when doing them with others.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Comfortable with them if they help keep things steady.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Appreciate them when they are done correctly.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "When introducing yourself to new people, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Get to the point and speak confidently.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Start a lively conversation.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Take a calm, friendly approach.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Observe first, then speak thoughtfully.",
+          "scores": { "D": 0, "i": 0, "S": 1, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "If you notice a mistake, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Point it out immediately and fix it fast.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Mention it in a positive and easygoing way.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Address it gently so no one feels discouraged.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Review it carefully to understand exactly what went wrong.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "What kind of praise feels most meaningful to you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Recognition for achieving tough goals.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Public appreciation and enthusiasm.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Sincere thanks for being dependable.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Respect for doing accurate, high-quality work.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "When plans are unclear, you tend to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Take initiative and define a path.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Talk it through and generate options.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Wait for stability before acting.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Ask questions until expectations are clear.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "How do you usually handle repetitive problems?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Push for a decisive change.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Get others involved to create fresh ideas.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Stay patient and keep things manageable.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Look for a systematic fix.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "In your free time, you often prefer activities that are:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Competitive or adventurous.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Social and fun.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Relaxing and familiar.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Skill-based or mentally engaging.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "When completing a task, what matters most to you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Getting it done with strong results.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keeping the experience enjoyable.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Finishing it reliably and steadily.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Doing it thoroughly and correctly.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "When someone disagrees with you, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Defend your view strongly.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Keep the conversation upbeat and persuasive.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Try to understand and maintain harmony.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Look for evidence and logic.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "How do you prefer instructions to be given?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Briefly, with freedom to act.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Conversationally and with encouragement.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Clearly and patiently.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Step-by-step and in detail.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "question": "When managing several tasks at once, you usually:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Prioritize quickly and push ahead.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Stay energized by the variety.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Work through them one by one at a steady pace.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Organize them carefully before starting.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "question": "What role do you naturally take in a team?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Driver of results.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Motivator of people.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Supporter of teamwork.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Organizer of quality and process.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "question": "If you had to make a choice with limited time, you would:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Choose fast and adjust later if needed.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Go with the option that feels exciting.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Pick the option that seems safest for everyone.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Use the best available facts to decide carefully.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "question": "How do you react to praise in front of others?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Appreciate it if it reflects strong achievement.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Enjoy it and feel energized.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Accept it modestly and warmly.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Prefer recognition based on clear merit.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "question": "What makes a task stressful for you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Not having enough control.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Working alone with little interaction.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Too much conflict or sudden disruption.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Vague expectations or poor quality standards.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "question": "When helping plan an event, you usually want to:",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Make decisions and keep things moving.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "Create a fun and welcoming atmosphere.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Make sure everyone feels included and comfortable.",
+          "scores": { "D": 0, "i": 1, "S": 3, "C": 0 }
+        },
+        {
+          "id": "D",
+          "text": "Handle logistics and details carefully.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "question": "What do you usually do when a task seems difficult?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Take it as a challenge and push through.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Talk it out and keep yourself motivated.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Stay patient and keep making progress.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Break it into steps and analyze it carefully.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "question": "How do you usually prefer to receive updates?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Short and focused on outcomes.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Open and conversational.",
+          "scores": { "D": 0, "i": 3, "S": 0, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Calm and consistent.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Detailed and complete.",
+          "scores": { "D": 0, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "question": "Which statement sounds most like you?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "I like to lead and make things happen.",
+          "scores": { "D": 3, "i": 1, "S": 0, "C": 0 }
+        },
+        {
+          "id": "B",
+          "text": "I like to connect with people and inspire them.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "I like to help people and keep things steady.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "I like to do things right and improve quality.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "question": "What are you most likely to bring to a project?",
+      "answers": [
+        {
+          "id": "A",
+          "text": "Drive and decisive action.",
+          "scores": { "D": 3, "i": 0, "S": 0, "C": 1 }
+        },
+        {
+          "id": "B",
+          "text": "Energy and enthusiasm.",
+          "scores": { "D": 0, "i": 3, "S": 1, "C": 0 }
+        },
+        {
+          "id": "C",
+          "text": "Reliability and support.",
+          "scores": { "D": 0, "i": 0, "S": 3, "C": 1 }
+        },
+        {
+          "id": "D",
+          "text": "Precision and organization.",
+          "scores": { "D": 1, "i": 0, "S": 0, "C": 3 }
+        }
+      ]
+    }
+  ]
+}
